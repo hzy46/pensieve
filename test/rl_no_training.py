@@ -46,6 +46,8 @@ def main():
     log_path = LOG_FILE + '_' + all_file_names[net_env.trace_idx]
     log_file = open(log_path, 'w')
 
+    reward_list = []
+
     with tf.Session() as sess:
 
         actor = a3c.ActorNetwork(sess,
@@ -96,6 +98,7 @@ def main():
                      - REBUF_PENALTY * rebuf \
                      - SMOOTH_PENALTY * np.abs(VIDEO_BIT_RATE[bit_rate] -
                                                VIDEO_BIT_RATE[last_bit_rate]) / M_IN_K
+            reward_list.append(reward)
 
             r_batch.append(reward)
 
@@ -164,6 +167,8 @@ def main():
 
                 log_path = LOG_FILE + '_' + all_file_names[net_env.trace_idx]
                 log_file = open(log_path, 'w')
+    mean_reward = np.mean(reward_list)
+    print("average reward: {:.4f}".format(mean_reward))
 
 
 if __name__ == '__main__':
