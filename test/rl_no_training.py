@@ -26,7 +26,7 @@ RAND_RANGE = 1000
 SUMMARY_DIR = './results'
 LOG_FILE = './results/log_sim_rl'
 # log in format of time_stamp bit_rate buffer_size rebuffer_time chunk_size download_time reward
-NN_MODEL = './models/nn_model_ep_38200.ckpt.meta'
+NN_MODEL = './models/nn_model_ep_38200.ckpt'
 # NN_MODEL = './models/pretrain_linear_reward.ckpt'
 
 
