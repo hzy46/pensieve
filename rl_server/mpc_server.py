@@ -285,7 +285,7 @@ def run(server_class=HTTPServer, port=8333, log_file_path=LOG_FILE):
     for combo in itertools.product([0,1,2,3,4,5], repeat=5):
         CHUNK_COMBO_OPTIONS.append(combo)
 
-    with open(log_file_path, 'wb') as log_file:
+    with open(log_file_path, 'w') as log_file:
 
         s_batch = [np.zeros((S_INFO, S_LEN))]
 

@@ -34,7 +34,7 @@ for video_idx in range(NUM_VIDEOS):
 		mask_bitrate_idx = mask_bitrate_idx_to_shuffle[:num_bitrates]
 		mask_bitrate_idx.sort()
 
-	with open(VIDEO_FOLDER + str(video_idx), 'wb') as f:
+	with open(VIDEO_FOLDER + str(video_idx), 'w') as f:
 		f.write(str(num_bitrates) + '\t' + str(num_chunks) + '\n')
 		for i in range(MAX_NUM_BITRATES):
 			if i in mask_bitrate_idx:

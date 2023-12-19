@@ -15,7 +15,7 @@ def main():
 
 	np.random.seed(RANDOM_SEED)
 
-	with open('./chrome_retry_log', 'wb') as log:
+	with open('./chrome_retry_log', 'w') as log:
 		log.write('chrome retry log\n')
 		log.flush()
 

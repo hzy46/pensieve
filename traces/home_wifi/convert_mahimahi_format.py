@@ -6,7 +6,7 @@ MAHIMAHI_FILE = './home_wifi_mahimahi'
 PACKET_SIZE = 1500  # bytes
 
 
-with open(TRACE_FILE, 'rb') as f, open(MAHIMAHI_FILE, 'wb') as wf:
+with open(TRACE_FILE, 'rb') as f, open(MAHIMAHI_FILE, 'w') as wf:
 
 	pkt_to_send = 0
 

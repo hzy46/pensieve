@@ -18,7 +18,7 @@ def main():
 
 		print file_path
 
-		with open(file_path, 'rb') as f, open(output_path, 'wb') as mf:
+		with open(file_path, 'rb') as f, open(output_path, 'w') as mf:
 			time_ms = []
 			bytes_recv = []
 			recv_time = []

@@ -7,7 +7,7 @@ import subprocess
 
 TRACE_PATH = '../cooked_traces/' 
 
-with open('./chrome_retry_log', 'wb') as f:
+with open('./chrome_retry_log', 'w') as f:
 	f.write('chrome retry log\n')
 
 os.system('sudo sysctl -w net.ipv4.ip_forward=1')

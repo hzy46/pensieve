@@ -12,7 +12,7 @@ BITS_IN_BYTE = 8.0
 def main():
 	files = os.listdir(FILE_PATH)
 	for trace_file in files:
-		with open(FILE_PATH + trace_file, 'rb') as f, open(OUTPUT_PATH + trace_file, 'wb') as mf:
+		with open(FILE_PATH + trace_file, 'rb') as f, open(OUTPUT_PATH + trace_file, 'w') as mf:
 			time_ms = []
 			bytes_recv = []
 			recv_time = []

@@ -111,7 +111,7 @@ def central_agent(net_params_queues, exp_queues):
                         filemode='w',
                         level=logging.INFO)
 
-    with tf.Session() as sess, open(LOG_FILE + '_test', 'wb') as test_log_file:
+    with tf.Session() as sess, open(LOG_FILE + '_test', 'w') as test_log_file:
 
         actor = a3c.ActorNetwork(sess,
                                  state_dim=[S_INFO, S_LEN], action_dim=A_DIM,
@@ -227,7 +227,7 @@ def agent(agent_id, net_params_queue, exp_queue):
                               fixed_env=False,
                               trace_folder=TRAIN_TRACES)
 
-    with tf.Session() as sess, open(LOG_FILE + '_agent_' + str(agent_id), 'wb') as log_file:
+    with tf.Session() as sess, open(LOG_FILE + '_agent_' + str(agent_id), 'w') as log_file:
         actor = a3c.ActorNetwork(sess,
                                  state_dim=[S_INFO, S_LEN], action_dim=A_DIM,
                                  learning_rate=ACTOR_LR_RATE)

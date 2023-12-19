@@ -37,7 +37,7 @@ def main():
 		out_file = out_file.replace(':', '-')
 		out_file = out_file.replace('/', '-')
 		out_file = OUTPUT_PATH + out_file
-		with open(out_file, 'wb') as f:
+		with open(out_file, 'w') as f:
 			for i in bw_measurements[k]:
 				f.write(str(i) + '\n')
 

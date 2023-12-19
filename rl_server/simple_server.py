@@ -100,7 +100,7 @@ def run(server_class=HTTPServer, port=8333, log_file_path=LOG_FILE):
     if not os.path.exists(SUMMARY_DIR):
         os.makedirs(SUMMARY_DIR)
 
-    with open(log_file_path, 'wb') as log_file:
+    with open(log_file_path, 'w') as log_file:
 
         last_bit_rate = DEFAULT_QUALITY
         last_total_rebuf = 0 

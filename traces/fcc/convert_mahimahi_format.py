@@ -14,7 +14,7 @@ def main():
 	files = os.listdir(IN_FILE)
 	for trace_file in files:
 		if os.stat(IN_FILE + trace_file).st_size >= FILE_SIZE:
-			with open(IN_FILE + trace_file, 'rb') as f, open(OUT_FILE + trace_file, 'wb') as mf:
+			with open(IN_FILE + trace_file, 'rb') as f, open(OUT_FILE + trace_file, 'w') as mf:
 				millisec_time = 0
 				mf.write(str(millisec_time) + '\n')
 				for line in f:

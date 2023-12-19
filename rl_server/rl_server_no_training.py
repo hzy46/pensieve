@@ -218,7 +218,7 @@ def run(server_class=HTTPServer, port=8333, log_file_path=LOG_FILE):
     if not os.path.exists(SUMMARY_DIR):
         os.makedirs(SUMMARY_DIR)
 
-    with tf.Session() as sess, open(log_file_path, 'wb') as log_file:
+    with tf.Session() as sess, open(log_file_path, 'w') as log_file:
 
         actor = a3c.ActorNetwork(sess,
                                  state_dim=[S_INFO, S_LEN], action_dim=A_DIM,

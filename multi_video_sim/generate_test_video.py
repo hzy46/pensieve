@@ -34,7 +34,7 @@ for bitrate in range(BITRATE_LEVELS):
 
 assert len(video_chunk_sizes) == BITRATE_LEVELS
 
-with open(VIDEO_OUTPUT_FOLDER + '0', 'wb') as f:
+with open(VIDEO_OUTPUT_FOLDER + '0', 'w') as f:
 	f.write(str(BITRATE_LEVELS) + '\t' + str(TOTAL_VIDEO_CHUNCK) + '\n')
 	for m in MASK:
 		f.write(str(m) + '\t')
