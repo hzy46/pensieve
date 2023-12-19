@@ -43,7 +43,7 @@ def main():
     r_batch = []
 
     video_count = 0
-
+    reward_list = []
     while True:  # serve video forever
         # the action is from the last decision
         # this is to make the framework similar to the real
@@ -73,6 +73,7 @@ def main():
                        str(delay) + '\t' +
                        str(reward) + '\n')
         log_file.flush()
+        reward_list.append(reward)
 
         if buffer_size < RESEVOIR:
             bit_rate = 0
@@ -99,6 +100,7 @@ def main():
 
             log_path = LOG_FILE + '_' + all_file_names[net_env.trace_idx]
             log_file = open(log_path, 'w')
+    print("reward: {}".format(np.mean(reward_list)))
 
 
 if __name__ == '__main__':
