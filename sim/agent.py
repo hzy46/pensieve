@@ -5,7 +5,8 @@ Use multi_agent.py for better performance and speed.
 
 import os
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import env
 import a3c
 import load_trace
