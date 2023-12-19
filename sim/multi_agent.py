@@ -3,7 +3,8 @@ import logging
 import numpy as np
 import multiprocessing as mp
 os.environ['CUDA_VISIBLE_DEVICES']=''
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import env
 import a3c
 import load_trace
