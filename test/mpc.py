@@ -82,6 +82,9 @@ def main():
     for combo in itertools.product([0,1,2,3,4,5], repeat=5):
         CHUNK_COMBO_OPTIONS.append(combo)
 
+    chunk_idx_for_reward = 0
+    reward_list = []
+
     while True:  # serve video forever
         # the action is from the last decision
         # this is to make the framework similar to the real
@@ -98,6 +101,9 @@ def main():
                  - REBUF_PENALTY * rebuf \
                  - SMOOTH_PENALTY * np.abs(VIDEO_BIT_RATE[bit_rate] -
                                            VIDEO_BIT_RATE[last_bit_rate]) / M_IN_K
+        if chunk_idx_for_reward != 0:
+            chunk_idx_for_reward.append(reward)
+        chunk_idx_for_reward += 1
 
         # log scale reward
         # log_bit_rate = np.log(VIDEO_BIT_RATE[bit_rate] / float(VIDEO_BIT_RATE[0]))
@@ -265,6 +271,9 @@ def main():
 
             log_path = LOG_FILE + '_' + all_file_names[net_env.trace_idx]
             log_file = open(log_path, 'w')
+            chunk_idx_for_reward = 0
+
+    print("reward except the first chunk: {:.4f}".format(np.mean(reward_list)))
 
 
 if __name__ == '__main__':
