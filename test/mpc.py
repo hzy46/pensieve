@@ -102,7 +102,7 @@ def main():
                  - SMOOTH_PENALTY * np.abs(VIDEO_BIT_RATE[bit_rate] -
                                            VIDEO_BIT_RATE[last_bit_rate]) / M_IN_K
         if chunk_idx_for_reward != 0:
-            chunk_idx_for_reward.append(reward)
+            reward_list.append(reward)
         chunk_idx_for_reward += 1
 
         # log scale reward
